@@ -25,7 +25,7 @@ SAVEE_classes={'a':0, 'd':1, 'f':2, 'h':3, 'n':4, 'sa':5, 'su':6}
 # anger', 'disgust', 'fear', 'happiness', 'neutral', 'sadness' and 'surprise'
 SAVEE_speaker={'DC':0,'JE':1, 'JK':2,'KL':3}
 
-EMODB_path = '../EMO_DB/Berlin/wav/'
+EMODB_path = './EMO_DB/Berlin/wav/'
 EMODB_classes = {'W':0, 'E':1, 'A':2, 'F':3, 'T':5, 'N':4}
 # anger', 'disgust', 'fear', 'happiness', 'neutral', 'sadness' and 'surprise'
 EMODB_speaker = {'03':4, '10':5, '11':6, '12':7, '15':8,'08':9, '09':10, '13':11, '14':12, '16':13}
