@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
 from utils import *
 import pickle
 import numpy as np
@@ -21,9 +16,6 @@ from keras_multi_head import MultiHeadAttention
 os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
 
-# In[3]:
-
-
 max_len = 256
 features_number = 128
 hidden_unit = 512
@@ -34,12 +26,8 @@ batch = 64
 epochs = 300
 
 
-# In[ ]:
-
-
 def SER_model(tra_data, tra_label_emo, tra_label_spea, val_data, val_label_emo, val_label_spea, max_len, features_num, hidden_unit, dp_rate, lstm_cells, classes, epochs, batch_size, taskname):
-#     tra_label = to_categorical(tra_label, num_classes=classes)
-#     val_label = to_categorical(val_label, num_classes=classes)
+
     u_train, u_val = attention_init(tra_data.shape[0], val_data.shape[0], 256, 1.0/256)
     file_path = './results/weights_'+ str(taskname) + '.h5'
     try:
@@ -111,11 +99,11 @@ def SER_model(tra_data, tra_label_emo, tra_label_spea, val_data, val_label_emo, 
         
 #     u_test, _ = attention_init(x_test.shape[0], x_test.shape[0], 256, 1.0/256)
     final_result = model.evaluate([u_val,val_data], [val_label_emo,val_label_spea], batch_size=batch_size, verbose=1)
-#     score_2, accuracy_2 = model.evaluate([u_val2,x_test2], y_test2, batch_size=128, verbose=1)
+
     print('*******************************************************')
     print('                     ------------ loss -------- emo_label_loss -------- emo_label_acc -------- speaker_label_loss ---------- speaker_label_acc ----------')
     print("Final test validation result: %s" % final_result)
-#     print("Final test2 validation accuracy: %s" % accuracy_2)
+
     print('*******************************************************')
     
     
